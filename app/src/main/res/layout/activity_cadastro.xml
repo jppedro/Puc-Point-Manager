@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastroActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="592dp"
+        android:layout_height="866dp"
+        app:srcCompat="@drawable/background_pagina_inicial"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-91dp"
+        tools:layout_editor_absoluteY="-120dp" />
+
+    <TextView
+        android:id="@+id/textViewCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:textColor="#004494"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="249dp" />
+
+    <TextView
+        android:id="@+id/textViewNomeCompleto"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Nome Completo"
+        android:textColor="#004494"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <EditText
+        android:id="@+id/editTextNomeCompleto"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edit_text_background"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <TextView
+        android:id="@+id/textViewID"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="ID (opcional)"
+        android:textColor="#004494"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <EditText
+        android:id="@+id/editTextID"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edit_text_background"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="437dp" />
+
+    <TextView
+        android:id="@+id/textViewSenha"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Senha"
+        android:textColor="#004494"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="495dp" />
+
+    <EditText
+        android:id="@+id/editTextSenha"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edit_text_background"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="522dp" />
+
+    <Button
+        android:id="@+id/buttonCadastrar"
+        android:layout_width="167dp"
+        android:layout_height="61dp"
+        android:background="@drawable/button_custom_background"
+        android:text="Cadastrar"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="644dp" />
+
+    <TextView
+        android:id="@+id/textViewCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Já Cadastrado? Entrar"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="696dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

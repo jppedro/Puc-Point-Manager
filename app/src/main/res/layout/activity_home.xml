@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="496dp"
+        android:layout_height="810dp"
+        app:srcCompat="@drawable/background_paginas"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-43dp"
+        tools:layout_editor_absoluteY="-74dp" />
+
+    <TextView
+        android:id="@+id/textViewHome"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo, Nome"
+        android:textColor="#004494"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="207dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo_puc"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="194dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonAcessarCalendario"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded_blue"
+        android:text="Acessar Calendário"
+        android:textColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="527dp" />
+
+    <Button
+        android:id="@+id/buttonRegistrarPonto"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded_blue"
+        android:text="Registrar Ponto"
+        android:textColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="364dp" />
+
+    <Button
+        android:id="@+id/buttonAcessarRelatorio"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded_blue"
+        android:text="Acessar Relatório"
+        android:textColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <Button
+        android:id="@+id/buttonVoltar"
+        android:layout_width="152dp"
+        android:layout_height="61dp"
+        android:background="@drawable/button_custom_background"
+        android:text="Voltar"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="243dp"
+        tools:layout_editor_absoluteY="654dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
