@@ -11,6 +11,9 @@
         android:layout_width="900dp"
         android:layout_height="0dp"
         app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background_pagina_inicial"
         tools:layout_editor_absoluteX="-245dp" />
 
