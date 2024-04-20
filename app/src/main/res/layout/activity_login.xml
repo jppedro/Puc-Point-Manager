@@ -67,7 +67,7 @@
         android:id="@+id/buttonEntrar"
         android:layout_width="152dp"
         android:layout_height="61dp"
-        android:backgroud="@drawable/button_custom_background"
+        android:background="@drawable/button_custom_background"
         android:text="Entrar"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
