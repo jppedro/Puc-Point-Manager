@@ -1,13 +1,23 @@
 package com.projeto.piIII
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.projeto.piIII.databinding.ActivityRegistroDePontoBinding
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Calendar
+import java.util.Locale
 
 class RegistroDePonto : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroDePontoBinding
@@ -27,36 +37,62 @@ class RegistroDePonto : AppCompatActivity() {
                 }
 
                 binding.buttonRegistrarPonto.setOnClickListener {
-                    // Adicionar lógica para registrar o horário atual, quando clicar no botão com o id `buttonRegistrarPonto`
-                    //
-                    // Feito isso, deve exibir um elemento (como um popup) com as seguintes características:
-                    // -> height: 312px
-                    // -> width: 95%
-                    // -> background: #D7B255
-                    //
-                    // Vai possuir mais 4 elementos centralizados sendo, dois elementos de texto em cima e dois elmentos de botão em baixo
-                    // -> Os dois elementos de texto em cima devem ter um gap de 10px entre eles e um gap de 35px com os elementos de baixo
-                    // -> Os dois elementos de botão em baixo devem ter um gap de 10px entre eles e um gap de 35px com os de cima
-                    //
-                    // Caso o horário seja resgistrado com sucesso, devem seguir as seguintes regras:
-                    // -> O primeiro elemento de texto deve ter como texto o seguinte: "Ponto Registrado "
-                    // -> O segundo elemento de texto deve ter como texto o seguinte: "Seu ponto de entrada/saída foi registrado, até uma próxima!"
-                    // -> O primeiro elemento botão deve possuir um ícone ao seu lado esquerdo, junto de um texto: "Acessar Relatório", que deverá ter como funcionalidade a navegação para uma nova tela
-                    // -> O segundo elemento deve possuir apenas um texto: "Fechar", que deve ter a funcionalidade de fechar o popup
-                    //
-                    // Caso o horário não seja registrado com sucesso, devem seguir as seguintes regras:
-                    // -> O primeiro elemento de texto deve ter como texto o seguinte: "Ponto NÃO Registrado"
-                    // -> O segundo elemento de texto deve ter como texto o seguinte: "Seu ponto de entrada/saída não foi registrado, tente novamente!"
-                    // -> O primeiro elemento botão deve possuir um ícone ao seu lado esquerdo, junto de um texto: "Acessar Relatório", que deverá ter como funcionalidade a navegação para uma nova tela
-                    // -> O segundo elemento deve possuir apenas um texto: "Tentar Novamente", que deve ter a funcionalidade de registrar o horário atual novamente
+                    val registrarPontoBemSucedido = registrarPonto()
+                    val dialog = Dialog(this)
 
+                    dialog.setContentView(R.layout.popup_layout)
+                    dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-                    Toast.makeText(this, "", Toast.LENGTH_LONG).show()
-                    //TODO
-                    /* Adianda não foi criada
-                    val intent = Intent(this, PontoActivity::class.java)
-                    startActivity(intent) */
+                    if(registrarPontoBemSucedido){
+                        dialog.findViewById<TextView>(R.id.popupText1).text = "Ponto Registrado"
+                        dialog.findViewById<TextView>(R.id.popupText2).text = "Seu ponto de entrada/saída foi registrado, até uma próxima!"
+
+                        val acessarRelatorioButton = dialog.findViewById<Button>(R.id.acessarRelatorioButton)
+
+                        acessarRelatorioButton.setOnClickListener {
+                            // Navegar para a tela de relatório
+                            // val intent = Intent(this, RelatorioActivity::class.java)
+                            // startActivity(intent)
+                            // dialog.dismiss()
+                        }
+
+                        val fecharButton = dialog.findViewById<Button>(R.id.fecharButton)
+                        fecharButton.setOnClickListener {
+                            dialog.dismiss()
+                        }
+                    } else{
+                        dialog.findViewById<TextView>(R.id.popupText1).text = "Ponto NÃO Registrado"
+                        dialog.findViewById<TextView>(R.id.popupText2).text = "Seu ponto de entrada/saída não foi registrado, tente novamente!"
+
+                        val acessarRelatorioButton = dialog.findViewById<Button>(R.id.acessarRelatorioButton)
+                        acessarRelatorioButton.setOnClickListener {
+                            // Navegar para a tela de relatório
+                            // val intent = Intent(this, RelatorioActivity::class.java)
+                            // startActivity(intent)
+                            // dialog.dismiss()
+                        }
+
+                        // val tentarNovamenteButton = dialog.findViewById<Button>(R.id.tentarNovamenteButton)
+                        // tentarNovamenteButton.setOnClickListener {
+                        //    // Tentar registrar o ponto novamente
+                        //    dialog.dismiss()
+                        //    binding.buttonRegistrarPonto.performClick()
+                        // }
+                    }
+
+                    dialog.show()
+
                 }
-        }
+            }
+    fun registrarPonto():Boolean{
+        val horarioData = Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
+        val dataFormatada = dateFormat.format(horarioData.time)
+
+        println("Horário atual: $dataFormatada")
+
+        // Adicionar lógica para salvar a data no banco de dados e retornar true para a ação bem sucedida e false caso contrário
+
+        return false
     }
 }
