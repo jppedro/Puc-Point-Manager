@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.projeto.piIII.databinding.ActivityMainBinding
 
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -23,5 +24,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CadastroActivity::class.java)
             startActivity(intent)
         }
+
     }
 }
