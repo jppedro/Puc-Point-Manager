@@ -8,25 +8,30 @@
     tools:context=".CadastroActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="592dp"
-        android:layout_height="866dp"
+        android:id="@+id/imageView"
+        android:layout_width="900dp"
+        android:layout_height="0dp"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background_pagina_inicial"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-91dp"
-        tools:layout_editor_absoluteY="-120dp" />
+        tools:layout_editor_absoluteX="-245dp"
+        tools:ignore="MissingConstraints"  />
 
     <TextView
         android:id="@+id/textViewCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="236dp"
         android:text="Cadastrar"
         android:textColor="#004494"
         android:textSize="35sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="249dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewNomeCompleto"
@@ -35,8 +40,8 @@
         android:text="Nome Completo"
         android:textColor="#004494"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="326dp" />
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="324dp" />
 
     <EditText
         android:id="@+id/editTextNomeCompleto"
@@ -86,17 +91,22 @@
         tools:layout_editor_absoluteY="522dp" />
 
     <Button
+
+
         android:id="@+id/buttonCadastrar"
-        android:layout_width="167dp"
-        android:layout_height="61dp"
+        android:layout_width="185dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/button_custom_background"
         android:text="Cadastrar"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="228dp"
-        tools:layout_editor_absoluteY="644dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
 
     <TextView
         android:id="@+id/textViewCadastro"
