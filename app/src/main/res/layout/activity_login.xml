@@ -14,6 +14,10 @@
         app:srcCompat="@drawable/background_pagina_inicial"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-91dp"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteY="-120dp" />
 
     <TextView
