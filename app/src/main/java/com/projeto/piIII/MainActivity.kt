@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.projeto.piIII.databinding.ActivityMainBinding
 
 
-class MainActivity : AppCompatActivity() {
+class  MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
