@@ -13,14 +13,19 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.buttonEntrar.setOnClickListener {
-            Toast.makeText(this, "FOI PRA HOME AMEM SENHOR", Toast.LENGTH_LONG).show()
             val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("id",binding.editTextID.text.toString()) //mandando ID para próxima tela
+            intent.putExtra("email",binding.editTextEmail.text.toString())
+            startActivity(intent)
+            finish()
+        }
+
+        binding.textViewCadastro.setOnClickListener {
+            val intent = Intent(this,  CadastroActivity::class.java)
             startActivity(intent)
         }
     }

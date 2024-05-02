@@ -13,12 +13,17 @@ class CadastroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCadastroBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityCadastroBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro)
+        binding = ActivityCadastroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.buttonCadastrar.setOnClickListener {
-            Toast.makeText(this, "FOI PRO LOGIN AMEM SENHOR", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.voltarLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
