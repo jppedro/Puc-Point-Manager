@@ -17,7 +17,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/background_pagina_inicial"
         android:scaleType="centerCrop"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteX="-91dp"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        tools:layout_editor_absoluteY="-120dp" />
 
     <TextView
         android:id="@+id/textViewEntrar"
@@ -87,11 +89,11 @@
         android:id="@+id/buttonEntrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_custom_background"
         android:text="Entrar"
         android:textAllCaps="true"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:background="@drawable/button_custom_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="17dp"
