@@ -4,8 +4,7 @@
     <value>
       <entry key="app">
         <State>
-          <multipleDevicesSelectedInDropDown value="true" />
-          <runningDeviceTargetsSelectedWithDialog>
+          <runningDeviceTargetSelectedWithDropDown>
             <Target>
               <type value="RUNNING_DEVICE_TARGET" />
               <deviceKey>
@@ -15,7 +14,8 @@
                 </Key>
               </deviceKey>
             </Target>
-          </runningDeviceTargetsSelectedWithDialog>
+          </runningDeviceTargetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-05-02T15:56:16.589150Z" />
         </State>
       </entry>
     </value>
