@@ -24,10 +24,6 @@ class HomeActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.textViewHome)
         textView.text = "Bem-vindo, $userName"
 
-        if(intent.hasExtra("id")){
-            binding.textViewHome.text = intent.getStringExtra("id")
-        }x
-
         binding.buttonRegistrarPonto.setOnClickListener {
             Toast.makeText(this, "VAI PARA TELA DE REGISTRO DE PONTO", Toast.LENGTH_LONG).show()
         }
