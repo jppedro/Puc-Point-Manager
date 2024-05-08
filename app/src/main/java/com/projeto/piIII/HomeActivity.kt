@@ -4,28 +4,36 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.database
 import com.projeto.piIII.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
-    val user = FirebaseAuth.getInstance().currentUser
+    val user = Firebase.auth.currentUser
     val userName = user?.displayName
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        database = Firebase.database.reference
 
         val textView = findViewById<TextView>(R.id.textViewHome)
-        textView.text = "Bem-vindo, $userName"
+        textView.text = "Bem-vindo, ${user?.email}"
 
+        listener()
+    }
+
+    fun listener(){
         binding.buttonRegistrarPonto.setOnClickListener {
-            Toast.makeText(this, "VAI PARA TELA DE REGISTRO DE PONTO", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, RegistroDePonto::class.java)
+            startActivity(intent)
+            finish()
         }
 
         binding.buttonAcessarRelatorio.setOnClickListener {

@@ -8,27 +8,27 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.database
 import com.projeto.piIII.databinding.ActivityRegistroDePontoBinding
+import com.projeto.piIII.enum.PointType
+import com.projeto.piIII.model.Point
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Locale
+import java.util.UUID
 
 class RegistroDePonto : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroDePontoBinding
+    private lateinit var database: DatabaseReference
             override fun onCreate(savedInstanceState: Bundle?) {
                 binding = ActivityRegistroDePontoBinding.inflate(layoutInflater)
                 super.onCreate(savedInstanceState)
-                setContentView(R.layout.activity_registro_de_ponto)
-
-                if(intent.hasExtra("id")) {
-                    binding.textViewRegistroDePonto.text = intent.getStringExtra("id")
-                }
+                setContentView(binding.root)
+                database = Firebase.database.reference
 
                 binding.buttonVoltar.setOnClickListener {
                     Toast.makeText(this, "VOLTA PARA HOME", Toast.LENGTH_LONG).show()
@@ -88,11 +88,18 @@ class RegistroDePonto : AppCompatActivity() {
         val horarioData = Calendar.getInstance()
         val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
         val dataFormatada = dateFormat.format(horarioData.time)
+        val funcUUID = Firebase.auth.currentUser?.uid
 
+        val ponto = funcUUID?.let {createPoint(it, dataFormatada, PointType.ENTRADA)}
+
+        database.child("points").child(ponto.toString()).setValue(ponto)
         println("Horário atual: $dataFormatada")
 
-        // Adicionar lógica para salvar a data no banco de dados e retornar true para a ação bem sucedida e false caso contrário
-
         return false
+    }
+
+    fun createPoint(funcUID: String, registerDate: String, pointType: PointType): Point{
+        val pointUuid = UUID.randomUUID()
+        return Point(pointUuid, funcUID, registerDate, pointType)
     }
 }
