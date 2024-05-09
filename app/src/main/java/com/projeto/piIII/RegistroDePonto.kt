@@ -22,18 +22,18 @@ import java.util.Locale
 class RegistroDePonto : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroDePontoBinding
             override fun onCreate(savedInstanceState: Bundle?) {
-                binding = ActivityRegistroDePontoBinding.inflate(layoutInflater)
                 super.onCreate(savedInstanceState)
-                setContentView(R.layout.activity_registro_de_ponto)
+                binding = ActivityRegistroDePontoBinding.inflate(layoutInflater)
+                setContentView(binding.root)
 
                 if(intent.hasExtra("id")) {
                     binding.textViewRegistroDePonto.text = intent.getStringExtra("id")
                 }
 
-                binding.buttonVoltar.setOnClickListener {
-                    Toast.makeText(this, "VOLTA PARA HOME", Toast.LENGTH_LONG).show()
-                    val intent = Intent(this, MainActivity::class.java)
+                binding.imageViewVoltar.setOnClickListener {
+                    val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
 
                 binding.buttonRegistrarPonto.setOnClickListener {
@@ -93,6 +93,6 @@ class RegistroDePonto : AppCompatActivity() {
 
         // Adicionar lógica para salvar a data no banco de dados e retornar true para a ação bem sucedida e false caso contrário
 
-        return false
+        return true
     }
 }
