@@ -25,15 +25,15 @@ class RegistroDePonto : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroDePontoBinding
     private lateinit var database: DatabaseReference
             override fun onCreate(savedInstanceState: Bundle?) {
-                binding = ActivityRegistroDePontoBinding.inflate(layoutInflater)
                 super.onCreate(savedInstanceState)
+                binding = ActivityRegistroDePontoBinding.inflate(layoutInflater)
                 setContentView(binding.root)
                 database = Firebase.database.reference
 
-                binding.buttonVoltar.setOnClickListener {
-                    Toast.makeText(this, "VOLTA PARA HOME", Toast.LENGTH_LONG).show()
-                    val intent = Intent(this, MainActivity::class.java)
+                binding.imageViewVoltar.setOnClickListener {
+                    val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
 
                 binding.buttonRegistrarPonto.setOnClickListener {
@@ -95,7 +95,7 @@ class RegistroDePonto : AppCompatActivity() {
         database.child("points").child(ponto.toString()).setValue(ponto)
         println("Horário atual: $dataFormatada")
 
-        return false
+        return true
     }
 
     fun createPoint(funcUID: String, registerDate: String, pointType: PointType): Point{

@@ -5,43 +5,50 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.database
+import com.example.app.RelatorioActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.projeto.piIII.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
-    val user = Firebase.auth.currentUser
+    private lateinit var auth: FirebaseAuth
+    val user = FirebaseAuth.getInstance().currentUser
     val userName = user?.displayName
-    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityHomeBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-        database = Firebase.database.reference
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val textView = findViewById<TextView>(R.id.textViewHome)
-        textView.text = "Bem-vindo, ${user?.email}"
+        textView.text = "Bem-vindo, $user"
 
-        listener()
-    }
-
-    fun listener(){
         binding.buttonRegistrarPonto.setOnClickListener {
             val intent = Intent(this, RegistroDePonto::class.java)
             startActivity(intent)
-            finish()
         }
 
+        // Função para acessar a tela de relatório, que é a tela que possui os cards a serem renderizados de acordo com a quantidade de elementos em um determiando array
         binding.buttonAcessarRelatorio.setOnClickListener {
-            Toast.makeText(this, "VAI PARA TELA DE RELATŔOIO", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, RelatorioActivity::class.java)
+            startActivity(intent)
         }
 
         binding.buttonAcessarCalendario.setOnClickListener {
-            Toast.makeText(this, "VAI PARA TELA DE CALENDÁRIO", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, RegistroDePonto::class.java)
+            startActivity(intent)
         }
+
+        binding.imageViewLogout.setOnClickListener {
+            performLogout()
+        }
+    }
+
+    private fun performLogout(){
+        auth.signOut()
+        Toast.makeText(this, "Logout realizado com sucesso!", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
