@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.projeto.piIII.HomeActivity
 import com.projeto.piIII.R
+import com.projeto.piIII.RegistroDePonto
 import com.projeto.piIII.databinding.ActivityRegistroDePontoBinding
 import com.projeto.piIII.databinding.ActivityRelatorioBinding
 
@@ -43,7 +44,7 @@ class RelatorioActivity : AppCompatActivity() {
         }
 
         binding.buttonCadastrar.setOnClickListener {
-            val intent = Intent(this, Regis::class.java)
+            val intent = Intent(this, RegistroDePonto::class.java)
             startActivity(intent)
             finish()
         }
