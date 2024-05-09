@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,37 +17,39 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/background_pagina_inicial"
         android:scaleType="centerCrop"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteX="-91dp"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        tools:layout_editor_absoluteY="-120dp" />
 
     <TextView
-        android:id="@+id/textViewCadastrar"
+        android:id="@+id/textViewEntrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="272dp"
-        android:text="Cadastrar"
+        android:text="Esqueceu senha?"
         android:textColor="#004494"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewNomeCompleto"
+        android:id="@+id/textViewEmail"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Nome Completo"
+        android:text="Email"
         android:textColor="#004494"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCadastrar"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEntrar"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextNomeCompleto"
+        android:id="@+id/editTextEmail"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginTop="56dp"
@@ -57,62 +59,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.348"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCadastrar"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textViewEmail"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Email"
-        android:textColor="#004494"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNomeCompleto"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.348"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNomeCompleto"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textViewSenha"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Senha"
-        android:textColor="#004494"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextSenha"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="56dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
-        app:layout_constraintStart_toStartOf="parent"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEntrar"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -127,14 +74,14 @@
         app:srcCompat="@drawable/arrow_1" />
 
     <Button
-        android:id="@+id/buttonCadastrar"
+        android:id="@+id/buttonEntrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Começar"
+        android:background="@drawable/button_custom_background"
+        android:text="Enviar"
         android:textAllCaps="true"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:background="@drawable/button_custom_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="17dp"

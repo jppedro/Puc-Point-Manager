@@ -6,7 +6,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.app.RelatorioActivity
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import com.projeto.piIII.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -45,7 +47,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun performLogout(){
-        auth.signOut()
+        Firebase.auth.signOut()
         Toast.makeText(this, "Logout realizado com sucesso!", Toast.LENGTH_LONG).show()
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
