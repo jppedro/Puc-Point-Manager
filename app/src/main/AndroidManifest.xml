@@ -17,6 +17,9 @@
             android:exported="false" />
 
         <activity
+            android:name=".EsqueceuSenhaActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.app.RelatorioActivity"
             android:exported="false" />
         <activity

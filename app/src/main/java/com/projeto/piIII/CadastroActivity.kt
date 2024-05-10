@@ -26,8 +26,8 @@ class CadastroActivity : AppCompatActivity() {
             listener()
         }
 
-        binding.voltarLogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+        binding.imageViewVoltar.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

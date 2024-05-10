@@ -21,21 +21,6 @@
         app:srcCompat="@drawable/background_pagina_inicial"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textViewRegistroDePonto"
-        android:layout_width="342dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="352dp"
-        android:text="Bem-vindo, Nome"
-        android:textColor="#004494"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"

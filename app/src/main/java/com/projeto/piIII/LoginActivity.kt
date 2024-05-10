@@ -21,6 +21,18 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.imageViewVoltar.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.buttonEsqueceuSenha.setOnClickListener {
+            val intent = Intent(this, EsqueceuSenhaActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         auth = Firebase.auth
         listener()
     }
@@ -30,11 +42,6 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.editTextEmail.text.toString().trim()
             val senha = binding.editTextSenha.text.toString().trim()
             realizarLogin(email,senha)
-        }
-
-        binding.textViewCadastro.setOnClickListener {
-            val intent = Intent(this,  CadastroActivity::class.java)
-            startActivity(intent)
         }
     }
 

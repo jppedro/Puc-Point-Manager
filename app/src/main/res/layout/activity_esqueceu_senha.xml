@@ -26,12 +26,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="272dp"
-        android:text="Entrar"
+        android:text="Esqueceu senha?"
         android:textColor="#004494"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,34 +62,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewEntrar"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textViewSenha"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Senha"
-        android:textColor="#004494"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextSenha"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.348"
-        android:inputType="textPassword"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        tools:ignore="MissingConstraints" />
-
     <ImageView
         android:id="@+id/imageViewVoltar"
         android:layout_width="28dp"
@@ -102,11 +74,11 @@
         app:srcCompat="@drawable/arrow_1" />
 
     <Button
-        android:id="@+id/buttonEntrar"
+        android:id="@+id/buttonEnviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_custom_background"
-        android:text="Entrar"
+        android:text="Enviar"
         android:textAllCaps="true"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
@@ -116,18 +88,5 @@
         android:layout_marginBottom="24dp"
         app:strokeColor="@color/white"
         app:strokeWidth="2dp" />
-
-    <TextView
-        android:id="@+id/buttonEsqueceuSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="Esqueceu a senha?"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonEntrar"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
