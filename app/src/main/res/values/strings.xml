@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PI_III</string>
+    <string name="register_button">Registrar</string>
+    <string name="confirmation_point_registration">Confirmação de Registro de Ponto</string>
 </resources>

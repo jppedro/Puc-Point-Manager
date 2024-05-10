@@ -15,8 +15,12 @@
         <activity
             android:name=".Calendar2Activity"
             android:exported="false" />
+
         <activity
-            android:name=".Calendar"
+            android:name="com.example.app.RelatorioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarActivity"
             android:exported="false" />
         <activity
             android:name=".RegistroDePonto"
