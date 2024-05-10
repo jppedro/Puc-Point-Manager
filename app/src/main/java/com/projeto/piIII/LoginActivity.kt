@@ -27,6 +27,12 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.buttonEsqueceuSenha.setOnClickListener {
+            val intent = Intent(this, EsqueceuSenhaActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         auth = Firebase.auth
         listener()
     }
