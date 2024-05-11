@@ -1,5 +1,6 @@
 package com.projeto.piIII
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
@@ -37,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.buttonAcessarCalendario.setOnClickListener {
-            val intent = Intent(this, RegistroDePonto::class.java)
+            val intent = Intent(this, CalendarActivity::class.java)
             startActivity(intent)
         }
 

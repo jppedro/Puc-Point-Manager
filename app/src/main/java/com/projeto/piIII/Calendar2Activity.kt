@@ -1,18 +1,17 @@
 package com.projeto.piIII
 
-import CalendarActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
 import com.projeto.piIII.databinding.ActivityCalendar2Binding
 
 class Calendar2Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalendar2Binding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
