@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.buttonEsqueceuSenha.setOnClickListener {
+        binding.editTextEsqueceuSenha.setOnClickListener {
             val intent = Intent(this, EsqueceuSenhaActivity::class.java)
             startActivity(intent)
             finish()

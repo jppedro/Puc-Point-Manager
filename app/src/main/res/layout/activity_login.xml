@@ -11,15 +11,15 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/background_pagina_inicial"
         android:scaleType="centerCrop"
-        tools:layout_editor_absoluteX="-91dp"
         app:layout_constraintBaseline_toBaselineOf="parent"
-        tools:layout_editor_absoluteY="-120dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/background_pagina_inicial" />
 
     <TextView
         android:id="@+id/textViewEntrar"
@@ -118,16 +118,16 @@
         app:strokeWidth="2dp" />
 
     <TextView
-        android:id="@+id/buttonEsqueceuSenha"
+        android:id="@+id/editTextEsqueceuSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="196dp"
         android:text="Esqueceu a senha?"
-        android:textColor="#FFFFFF"
+        android:textColor="#004494"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonEntrar"
-        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSenha"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
