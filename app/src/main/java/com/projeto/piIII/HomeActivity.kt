@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.buttonAcessarCalendario.setOnClickListener {
-            val intent = Intent(this, CalendarActivity::class.java)
+            val intent = Intent(this, Calendar2Activity::class.java)
             startActivity(intent)
         }
 

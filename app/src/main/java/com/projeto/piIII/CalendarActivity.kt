@@ -1,5 +1,6 @@
 package com.projeto.piIII
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
@@ -34,9 +35,12 @@ class CalendarActivity : AppCompatActivity() {
         datePicker = findViewById(R.id.datePicker1)
         registerButton = findViewById(R.id.registerButton)
 
-        registerButton.setOnClickListener {
-            registerReminder()
+        binding.registerButton.setOnClickListener {
+            // Ir para a tela do HomeActivity (HomeActivity)
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
+
     }
 
     private fun registerReminder() {
