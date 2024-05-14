@@ -16,6 +16,7 @@ import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.projeto.piIII.databinding.ActivityHomeBinding
 
+@RequiresApi(Build.VERSION_CODES.O)
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var auth: FirebaseAuth
