@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -16,19 +17,25 @@ class CadastroActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityCadastroBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro)
+        binding = ActivityCadastroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        auth = Firebase.auth
-        listener()
+        binding.buttonCadastrar.setOnClickListener {
+            auth = Firebase.auth
+            listener()
+        }
+
+        binding.imageViewVoltar.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun listener(){
         binding.buttonCadastrar.setOnClickListener {view ->
-
-
-            val email = binding.editTextNomeCompleto.text.toString().trim()
+            val email = binding.editTextEmail.text.toString().trim()
             val senha = binding.editTextSenha.text.toString().trim()
 
             if (email.isEmpty() || senha.isEmpty()){
@@ -37,10 +44,6 @@ class CadastroActivity : AppCompatActivity() {
             }else{
                 cadastrarConta(email, senha)
             }
-
-            Toast.makeText(this, "FOI PRO LOGIN AMEM SENHOR", Toast.LENGTH_LONG).show()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
         }
     }
 
@@ -52,6 +55,8 @@ class CadastroActivity : AppCompatActivity() {
                         "Nova conta criada com sucesso!",
                         Toast.LENGTH_SHORT)
                         .show()
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
                     } else {
                     Toast.makeText(this,
                         task.exception?.message,

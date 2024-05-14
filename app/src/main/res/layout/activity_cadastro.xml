@@ -8,104 +8,138 @@
     tools:context=".CadastroActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="592dp"
-        android:layout_height="866dp"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/background_pagina_inicial"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-91dp"
-        tools:layout_editor_absoluteY="-120dp" />
+        android:scaleType="centerCrop"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textViewCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="272dp"
         android:text="Cadastrar"
         android:textColor="#004494"
         android:textSize="35sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="249dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewNomeCompleto"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="Nome Completo"
         android:textColor="#004494"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="326dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCadastrar"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextNomeCompleto"
         android:layout_width="350dp"
         android:layout_height="40dp"
+        android:layout_marginTop="56dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:background="@drawable/edit_text_background"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="357dp" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCadastrar"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textViewID"
+        android:id="@+id/textViewEmail"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="ID (opcional)"
+        android:layout_marginTop="20dp"
+        android:text="Email"
         android:textColor="#004494"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="411dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomeCompleto"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextID"
+        android:id="@+id/editTextEmail"
         android:layout_width="350dp"
         android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:background="@drawable/edit_text_background"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="437dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomeCompleto"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textViewSenha"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="Senha"
         android:textColor="#004494"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="495dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextSenha"
         android:layout_width="350dp"
         android:layout_height="40dp"
+        android:layout_marginTop="56dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:background="@drawable/edit_text_background"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="522dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageViewVoltar"
+        android:layout_width="28dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_1" />
 
     <Button
         android:id="@+id/buttonCadastrar"
-        android:layout_width="167dp"
-        android:layout_height="61dp"
-        android:background="@drawable/button_custom_background"
-        android:text="Cadastrar"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="228dp"
-        tools:layout_editor_absoluteY="644dp" />
-
-    <TextView
-        android:id="@+id/textViewCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Já Cadastrado? Entrar"
+        android:text="Começar"
+        android:textAllCaps="true"
+        android:textSize="20sp"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="696dp"
-        tools:ignore="MissingConstraints" />
+        android:background="@drawable/button_custom_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="24dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

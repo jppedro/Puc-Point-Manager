@@ -17,9 +17,21 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.imageViewVoltar.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.buttonEsqueceuSenha.setOnClickListener {
+            val intent = Intent(this, EsqueceuSenhaActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         auth = Firebase.auth
         listener()
@@ -27,14 +39,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun listener(){
         binding.buttonEntrar.setOnClickListener {
-            val email = binding.editTextID.text.toString().trim()
+            val email = binding.editTextEmail.text.toString().trim()
             val senha = binding.editTextSenha.text.toString().trim()
             realizarLogin(email,senha)
-
-            Toast.makeText(this, "FOI PRA HOME AMEM SENHOR", Toast.LENGTH_LONG).show()
-            val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("id",binding.editTextID.text.toString()) //mandando ID para próxima tela
-            startActivity(intent)
         }
     }
 
@@ -46,6 +53,11 @@ class LoginActivity : AppCompatActivity() {
                         "Login feito com sucesso!",
                         Toast.LENGTH_SHORT)
                         .show()
+
+                    val intent = Intent(this, HomeActivity::class.java)
+                    intent.putExtra("email",binding.editTextEmail.text.toString())
+                    startActivity(intent)
+                    finish()
                 } else {
                     Toast.makeText(this,
                         task.exception?.message,

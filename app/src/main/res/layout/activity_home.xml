@@ -9,78 +9,94 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="496dp"
-        android:layout_height="810dp"
-        app:srcCompat="@drawable/background_paginas"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-43dp"
-        tools:layout_editor_absoluteY="-74dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/background_pagina_inicial"
+        android:scaleType="centerCrop"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textViewHome"
-        android:layout_width="206dp"
-        android:layout_height="wrap_content"
+        android:layout_width="342dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="352dp"
         android:text="Bem-vindo, Nome"
         android:textColor="#004494"
         android:textSize="35sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="207dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_puc"
-        tools:layout_editor_absoluteX="236dp"
-        tools:layout_editor_absoluteY="194dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonAcessarCalendario"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:background="@drawable/button_rounded_blue"
         android:text="Acessar Calendário"
         android:textColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="527dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAcessarRelatorio"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonRegistrarPonto"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_rounded_blue"
         android:text="Registrar Ponto"
         android:textColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="364dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHome"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonAcessarRelatorio"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:background="@drawable/button_rounded_blue"
         android:text="Acessar Relatório"
         android:textColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="447dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegistrarPonto"
+        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonVoltar"
-        android:layout_width="152dp"
-        android:layout_height="61dp"
-        android:background="@drawable/button_custom_background"
-        android:text="Voltar"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="654dp" />
+    <ImageView
+        android:id="@+id/imageViewLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logout_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

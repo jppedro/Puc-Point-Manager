@@ -11,14 +11,20 @@ class  MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.button3.setOnClickListener {
-            Toast.makeText(this, "FOI AMEM SENHOR", Toast.LENGTH_LONG).show()
             val intent = Intent(this, CadastroActivity::class.java)
             startActivity(intent)
+            finish()
+        }
+
+        binding.btnLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
