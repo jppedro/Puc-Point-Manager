@@ -40,7 +40,6 @@ class HomeActivity : AppCompatActivity() {
 
         // Função para acessar a tela de relatório, que é a tela que possui os cards a serem renderizados de acordo com a quantidade de elementos em um determiando array
         binding.buttonAcessarRelatorio.setOnClickListener {
-            getAllPoints()
             val intent = Intent(this, RelatorioActivity::class.java)
             startActivity(intent)
         }
@@ -92,8 +91,5 @@ class HomeActivity : AppCompatActivity() {
     private fun updateRecyclerView(cards: List<CardData>) {
         val adapter = CardAdapter(cards)
         recyclerView.adapter = adapter
-    }
-    private fun setupFirebase(){
-
     }
 }

@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.CardAdapter
 import com.example.app.CardData
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.projeto.piIII.databinding.ActivityRelatorioBinding
@@ -20,15 +23,18 @@ class RelatorioActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private lateinit var recyclerView: RecyclerView
     private val listaPoints = mutableListOf<Point>()
+    private val cardsList = mutableListOf<CardData>()
+    private lateinit var auth:FirebaseAuth
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRelatorioBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        auth = Firebase.auth
 
         // Obtenha o RecyclerView
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCards)
+        recyclerView = findViewById(R.id.recyclerViewCards)
 
         // Defina o layout manager para o RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -57,9 +63,38 @@ class RelatorioActivity : AppCompatActivity() {
             startActivity(intent)
         }
         setupFirebase()
+        getAllPoints()
     }
     private fun setupFirebase(){
-        database = FirebaseDatabase.getInstance().getReference("points")
+        database = FirebaseDatabase.getInstance().getReference("points").child(auth.currentUser?.uid ?: "Null")
     }
 
+    private fun getAllPoints() {
+
+        database.get().addOnSuccessListener { dataSnapshot ->
+            for (childSnapshot in dataSnapshot.children) {
+                val pointData = childSnapshot.value as? Map<String, Any>
+
+                pointData?.let {
+                    val card = CardData(
+                        pointType = it["pointType"].toString(),
+                        registerDate = it["registerDate"].toString(),
+                    )
+                    cardsList.add(card)
+                }
+            }
+
+            updateRecyclerView(cardsList)
+
+        }.addOnFailureListener { exception ->
+            // Lidar com falha ao acessar o banco de dados
+            val message = "Erro ao acessar o banco de dados ${exception.message}"
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun updateRecyclerView(cards: List<CardData>) {
+        val adapter = CardAdapter(cards)
+        recyclerView.adapter = adapter
+    }
 }
