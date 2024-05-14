@@ -7,7 +7,8 @@ import kotlinx.parcelize.Parcelize
 data class Point (
     var uuid: String? = "",
     var registerDate: String? = "",
-    var pointType: String? = ""
+    var pointType: String? = "",
+    var userUID: String? = ""
 ) : Parcelable {
     constructor() : this("", "", "") // Construtor sem argumentos
 }

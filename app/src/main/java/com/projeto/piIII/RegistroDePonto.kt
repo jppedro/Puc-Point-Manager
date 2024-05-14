@@ -11,26 +11,20 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.example.app.RelatorioActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.projeto.piIII.databinding.ActivityRegistroDePontoBinding
 import com.projeto.piIII.enum.PointType
 import com.projeto.piIII.model.Point
 import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Locale
 import java.util.UUID
-import java.util.concurrent.CompletableFuture
 
 @RequiresApi(Build.VERSION_CODES.O)
 class RegistroDePonto : AppCompatActivity() {
@@ -105,7 +99,6 @@ class RegistroDePonto : AppCompatActivity() {
             val dataFormatada = dateFormat.format(horarioData.time)
 
             var registrado = true
-            getAllPoints()
 
             var ponto: Point? = setPoint()
 
@@ -137,49 +130,12 @@ class RegistroDePonto : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("points").child(auth.currentUser?.uid ?: "Null")
     }
 
-    private fun getAllPoints() {
-        /*database.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    listaPoints.clear()
-                    for (childSnapshot in snapshot.children) {
-                        val uuid = childSnapshot.key ?: ""
-                        val registerDate =
-                            childSnapshot.child("registerDate").getValue(String::class.java) ?: ""
-                        val pointType =
-                            childSnapshot.child("pointType").getValue(String::class.java) ?: ""
-                        val point = Point(uuid, registerDate, pointType)
-                        listaPoints.add(point)
-                    }
-                    message = "Dados recuperados"
-                }
 
-                override fun onCancelled(error: DatabaseError) {
-                    message = "Erro ao acessar o banco de dados ${error.message}"
-                }
-            })*/
-        var message = ""
-        database.get().addOnSuccessListener {
-            listaPoints.clear()
-            for(childSnapshot in it.children){
-                val uuid = childSnapshot.key ?: ""
-                val registerDate =
-                    childSnapshot.child("registerDate").getValue(String::class.java) ?: ""
-                val pointType =
-                    childSnapshot.child("pointType").getValue(String::class.java) ?: ""
-                val point = Point(uuid, registerDate, pointType)
-                listaPoints.add(point)
-            }
-            message = "Dados recuperados"
-
-        }.addOnFailureListener{
-            message = "Erro ao acessar o banco de dados ${it.message}"
-        }
-        Toast.makeText(this, message, Toast.LENGTH_SHORT)
-    }
 
     private fun createPoint(registerDate: String, pointType: PointType): Point{
         val pointUuid = UUID.randomUUID()
-        return Point(pointUuid.toString(), registerDate, pointType.name)
+        val userUID = FirebaseAuth.getInstance().currentUser?.uid ?: "Null"
+        return Point(pointUuid.toString(), registerDate, pointType.name, userUID)
     }
 
     private fun setPoint():Point{

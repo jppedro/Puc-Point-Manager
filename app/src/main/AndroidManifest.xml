@@ -16,7 +16,7 @@
             android:name=".EsqueceuSenhaActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.app.RelatorioActivity"
+            android:name=".RelatorioActivity"
             android:exported="false" />
         <activity
             android:name=".CalendarActivity"
