@@ -20,6 +20,7 @@ import com.google.firebase.database.database
 import com.projeto.piIII.databinding.ActivityCalendarBinding
 import com.projeto.piIII.model.Atividade
 
+@RequiresApi(Build.VERSION_CODES.O)
 class CalendarActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalendarBinding
@@ -28,7 +29,6 @@ class CalendarActivity : AppCompatActivity() {
 
     private lateinit var saveButton: Button
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding: ActivityCalendarBinding = ActivityCalendarBinding.inflate(layoutInflater)

@@ -1,13 +1,16 @@
 package com.projeto.piIII
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.projeto.piIII.databinding.ActivityCalendar2Binding
 
+@RequiresApi(Build.VERSION_CODES.O)
 class Calendar2Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalendar2Binding
