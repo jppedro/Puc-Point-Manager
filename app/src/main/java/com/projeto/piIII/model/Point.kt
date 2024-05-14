@@ -1,12 +1,13 @@
 package com.projeto.piIII.model
 
-import com.projeto.piIII.enum.PointType
-import java.time.Instant
-import java.util.UUID
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-data class Point(
-    var uuid: UUID,
-    var funcUID: String,
-    var registerDate: String,
-    var pointType: PointType
-)
+@Parcelize
+data class Point (
+    var uuid: String? = "",
+    var registerDate: String? = "",
+    var pointType: String? = ""
+) : Parcelable {
+    constructor() : this("", "", "") // Construtor sem argumentos
+}
