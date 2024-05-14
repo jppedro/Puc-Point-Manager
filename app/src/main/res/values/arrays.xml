@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="horario_inicio">
+        <item>19:20</item>
+        <item>21:05</item>
+        <!-- Adicione mais horários conforme necessário -->
+    </string-array>
+    <string-array name="horario_termino">
+        <item>20:50</item>
+        <item>22:35</item>
+        <!-- Adicione mais horários conforme necessário -->
+    </string-array>
+    <string-array name="dias_semana">
+        <item>Segunda-Feira</item>
+        <item>Terça-Feira</item>
+        <item>Quarta-Feira</item>
+        <item>Quinta-Feira</item>
+        <item>Sexta-Feira</item>
+        <item>Sábado</item>
+
+    </string-array>
+
+
+
+
+</resources>

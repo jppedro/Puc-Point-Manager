@@ -12,10 +12,8 @@ import com.example.app.CardAdapter
 import com.example.app.CardData
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.projeto.piIII.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -48,16 +46,13 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.buttonAcessarCalendario.setOnClickListener {
-            val intent = Intent(this, CalendarActivity::class.java)
+            val intent = Intent(this, Calendar2Activity::class.java)
             startActivity(intent)
         }
 
         binding.imageViewLogout.setOnClickListener {
             performLogout()
         }
-        recyclerView = findViewById(R.id.recyclerViewCards)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        database = FirebaseDatabase.getInstance().getReference("points")
     }
 
     private fun performLogout(){
@@ -69,25 +64,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun getAllPoints() {
-        /*var message = ""
-        database.get().addOnSuccessListener {
-            listaPoints.clear()
-            for(childSnapshot in it.children){
-                Log.d("Antes", childSnapshot.toString())
-                val uuid = childSnapshot.key ?: ""
-                val Informacoes =
-                    childSnapshot.value?: ""
-                val Informacoes1 = Informacoes.
-                Log.d("Antes", Informacoes.toString())
-            }
-            message = "Dados recuperados"
-
-        }.addOnFailureListener{
-            message = "Erro ao acessar o banco de dados ${it.message}"
-        }
-        Toast.makeText(this, message, Toast.LENGTH_SHORT)*/
-
-
         val cardsList = mutableListOf<CardData>()
 
         database.get().addOnSuccessListener { dataSnapshot ->

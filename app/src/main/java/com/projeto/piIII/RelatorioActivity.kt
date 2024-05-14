@@ -57,7 +57,6 @@ class RelatorioActivity : AppCompatActivity() {
             startActivity(intent)
         }
         setupFirebase()
-
     }
     private fun setupFirebase(){
         database = FirebaseDatabase.getInstance().getReference("points")
