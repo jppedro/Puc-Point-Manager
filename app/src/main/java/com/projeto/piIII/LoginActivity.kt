@@ -1,9 +1,11 @@
 package com.projeto.piIII
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -12,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.projeto.piIII.databinding.ActivityLoginBinding
 
+@RequiresApi(Build.VERSION_CODES.O)
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
@@ -45,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun realizarLogin(email:String,password:String){
+    private fun realizarLogin(email:String, password:String){
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if(task.isSuccessful){
